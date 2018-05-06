@@ -1,0 +1,16 @@
+/* body {
+  font-family: monospace;
+  font-size: 20px;
+} */
+
+
+#words {
+  display: none;
+}
+
+
+.word {
+  font-size: 60px;
+  color: red;
+  position: absolute;
+}
