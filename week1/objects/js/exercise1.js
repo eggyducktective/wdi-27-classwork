@@ -19,9 +19,9 @@ const readingList = [
 for (var i = 0; i < readingList.length; i++) {
 
   if (readingList[i].alreadyRead) {
-    console.log(`You already read ${readingList[i].title} by ${readingList[i].author}`);
+    console.log(`You already read "${readingList[i].title}" by ${readingList[i].author}`);
 } else {
-    console.log(`You still need to read ${readingList[i].title} by ${readingList[i].author}`);
+    console.log(`You still need to read "${readingList[i].title}" by ${readingList[i].author}`);
   }
   // console.log(`${readingList[i].title} by ${readingList[i].author}`);
   // const currentBook = readingList[i] store in a variable
