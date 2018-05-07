@@ -7,14 +7,18 @@
 // Call that function 3 times with 3 different values for the arguments.
 
 
-const tellFortune = function( numberOfChildren, partnersName, geographicalLocation, jobTitle ){
-  return `You will be a ${ jobTitle } in ${geographicalLocation}, and married to ${partnersName} with ${numberOfChildren} kids.`;
+
+const tellFortune = function(jobTitle, geoLocation, partnersName, numberOfKids) {
+  return `You will be a ${jobTitle} in ${geoLocation}, and married to ${partnersName} with ${numberOfKids} kids`;
 };
 
-
-console.log( tellFortune(1, 'Debbie', 'Hawaii', 'pro surfer') );
-
-
+example1 = tellFortune("nurse", "america", "mick", 100);
+example2 = tellFortune("policeman", "australia", "donald", 2);
+example3 = tellFortune("teacher", "belgium", "natalie", 1);
+//console.log(tellFortune(...............))
+console.log(example1);
+console.log(example2);
+console.log(example3);
 
 /*
 The Age Calculator
@@ -121,5 +125,5 @@ const fahrenheitToCelsius = function( temp ){
   return (temp - 32) / 1.8;
 };
 
-console.log(`${27}˚c is ${ celsiusToFahrenheit(27).toFixed(2) }˚F.`);
+console.log(`${27}˚C is ${ celsiusToFahrenheit(27).toFixed(2) }˚F.`);
 console.log(`${80.6}˚F is ${ fahrenheitToCelsius(80.6).toFixed(2) }˚C.`);
