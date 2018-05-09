@@ -1,0 +1,6 @@
+STOCK RESULT
+<div class="result">
+  Current price for <%= params[:symbol] %> <strong><%= @stock.latest_price %></strong>
+  <p>Weekly high: <%= @stock.week52_high %></p>
+  <p>Weekly low: <%= @stock.week52_low %></p>
+</div>
