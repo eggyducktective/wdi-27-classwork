@@ -42,7 +42,7 @@ const raindrops = function(number) {
     string += number;
   }
   return string;
-}
+};
 
 console.log(raindrops(28));
 console.log(raindrops(1755));
