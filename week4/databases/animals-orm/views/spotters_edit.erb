@@ -1,0 +1,10 @@
+<h2><%= @spotter["first_name"]  %> <%= @spotter["last_name"] %></h2>
+<form action="/spotters/<%= @spotter["id"] %>" method="post">
+  Name:   <input type="text" name="name" value="<%= @spotter["name"] %>"><br>
+  Location:    <input type="text" name="location" value="<%= @spotter["location"] %>"><br>
+  Spotted count:  <input type="text" name="spotted" value="<%= @spotter["spotted"] %>"><br>
+  Spotting Animal ID:      <input type="text" name="animal_id" value="<%= @spotter["animal_id"] %>"><br>
+  
+  <input type="submit" value="Update Spotter">
+
+</form>

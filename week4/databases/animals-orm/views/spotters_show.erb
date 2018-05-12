@@ -1,0 +1,21 @@
+<h2> <%= @spotter.name %></h2>
+
+
+<p>Location: <%= @spotter.location %></p>
+<p>Spotting:
+
+
+  <a href="/animals/<%= @spotter.animal.id %>">
+    <%= @spotter.animal.first_name %>
+    <%= @spotter.animal.last_name %>
+  </a>
+<br>
+
+<img src="<%= @spotter.animal.image_url %>" width="200">
+</p>
+
+
+<p>Spotted Count: <%= @spotter.spotted %></p>
+<a href="/spotters/<%= @spotter["id"]%>/edit">Edit</a>
+
+<a href="/spotters/<%= @spotter["id"]%>/delete">Delete</a>

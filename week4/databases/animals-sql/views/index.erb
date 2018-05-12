@@ -1,0 +1,12 @@
+<h2>INDEX</h2>
+
+<ul>
+  <% @animals.each do |a| %>
+    <li>
+      <a href="/animals/<%= a["id"] %>">
+    <%= a["first_name"] + " " + a["last_name"] %></a>
+    <em><%= a["description"].downcase %></em>
+    (<strong><%= a["roundness"] %>/10</strong>)
+    </li>
+  <% end %>
+</ul>
