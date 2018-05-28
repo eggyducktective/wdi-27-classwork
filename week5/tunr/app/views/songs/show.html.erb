@@ -1,0 +1,14 @@
+
+<h2>
+  <em><%= @song.title %></em>,
+  <%= link_to @song.artist.name, artist_path(@song.artist) %>
+  </h2>
+<p>
+
+
+
+
+<br>
+<%= link_to 'Edit', edit_song_path(@song)  %>
+
+<%= link_to 'Delete', song_path(@song), method: 'delete' %>

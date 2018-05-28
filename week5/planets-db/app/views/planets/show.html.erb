@@ -1,0 +1,37 @@
+<!--
+
+id: integer
+  name: string
+  image: text
+  orbit: float
+  diameter: float
+  mass: float
+  temperature: float
+  moons: integer
+  created_at: datetime
+  updated_at: datetime -->
+
+<h2><%= @planet.name %></h2>
+<p> <strong>Orbit:</strong> <%= @planet.orbit %> earth orbits</p>
+<p> <strong>Diameter:</strong> <%= @planet.diameter %> earth diameters</p>
+<p> <strong>Mass:</strong> <%= @planet.mass %> earth masses</p>
+<p> <strong>Temperature:</strong> <%= @planet.temperature %> earth temp</p>
+<p> <strong>Moons:</strong> <%= @planet.moons %></p>
+<br>
+<% if @planet.image.present? %>  <!--check if string is greater than 0, opposite of empty method-->
+<%= image_tag @planet.image, alt: "Apocalypse", class: "planet" %>
+<% end  %>
+<br>
+
+<!-- <a href="<%= planet_edit_path(@planet.id) %>">Edit</a> -->
+<!-- same as
+<a href="/planets/<%= @planet.id %>">
+-->
+
+<%= link_to "Edit", planet_edit_path(@planet.id) %>
+
+<%= link_to "Delete", planet_destroy_path(@planet.id) %>
+
+<!-- <a href="<%= planet_destroy_path(@planet.id) %>">Delete</a> -->
+<br>
+(Last updated <%= @planet.updated_at %>)

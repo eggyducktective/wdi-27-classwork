@@ -1,0 +1,13 @@
+<%= form_for @song do |f| %>
+<fieldset>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</fieldset>
+
+<fieldset>
+  <%= f.label :artist_id, 'Artist' %>
+  <%= f.select :artist_id, Artist.pluck(:name, :id), include_blank: true %>
+</fieldset>
+
+<%= f.submit %>
+<% end %>

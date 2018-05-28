@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MomaApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <h1>MoMa Bears</h1>
+    <nav>
+    <ul id="navbar">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Bear Artists", artists_path %></li>
+      <li><%= link_to "Works", works_path %></li>
+    </ul>
+    <hr>
+
+    <%= yield %>
+    <hr>
+    <footer> &copy; Round Boys vs Teddy Bears 2018</footer>
+  </body>
+</html>

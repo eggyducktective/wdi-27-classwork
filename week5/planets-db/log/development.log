@@ -1,0 +1,2611 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePlanets (20180515023955)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "planets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "image" text, "orbit" float, "diameter" float, "mass" float, "temperature" float, "moons" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180515023955_create_planets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180515023955"]]
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (6.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-15 02:41:40.942805"], ["updated_at", "2018-05-15 02:41:40.942805"]]
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mPlanet Load (0.6ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Create (7.9ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Evil Planet"], ["orbit", 3.4], ["diameter", 10000000.0], ["mass", 12030030323.4], ["moons", 100], ["created_at", "2018-05-15 02:43:41.492470"], ["updated_at", "2018-05-15 02:43:41.492470"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  [1m[36mPlanet Load (0.6ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" ORDER BY "planets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" ORDER BY "planets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Destroy (0.7ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = ?[0m  [["id", 1]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mPlanet Create (0.7ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earth"], ["orbit", 1.0], ["diameter", 1.0], ["mass", 1.0], ["temperature", 1.0], ["moons", 1], ["created_at", "2018-05-15 02:52:11.040841"], ["updated_at", "2018-05-15 02:52:11.040841"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mars"], ["orbit", 687.0], ["diameter", 0.5], ["mass", 2.0], ["temperature", 0.2], ["moons", 2], ["created_at", "2018-05-15 02:52:11.046982"], ["updated_at", "2018-05-15 02:52:11.046982"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPlanet Create (0.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Venus"], ["orbit", 0.7], ["diameter", 0.2], ["mass", 2.0], ["temperature", 6.0], ["moons", 2], ["created_at", "2018-05-15 02:52:11.052659"], ["updated_at", "2018-05-15 02:52:11.052659"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlanet Create (0.8ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jupiter"], ["orbit", 700.0], ["diameter", 0.1], ["mass", 100.0], ["temperature", 0.1], ["moons", 8], ["created_at", "2018-05-15 02:52:11.058323"], ["updated_at", "2018-05-15 02:52:11.058323"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mPlanet Create (0.8ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earth"], ["orbit", 1.0], ["diameter", 1.0], ["mass", 1.0], ["temperature", 1.0], ["moons", 1], ["created_at", "2018-05-15 02:52:40.712452"], ["updated_at", "2018-05-15 02:52:40.712452"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlanet Create (0.7ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mars"], ["orbit", 687.0], ["diameter", 0.5], ["mass", 2.0], ["temperature", 0.2], ["moons", 2], ["created_at", "2018-05-15 02:52:40.719816"], ["updated_at", "2018-05-15 02:52:40.719816"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Venus"], ["orbit", 0.7], ["diameter", 0.2], ["mass", 2.0], ["temperature", 6.0], ["moons", 2], ["created_at", "2018-05-15 02:52:40.727475"], ["updated_at", "2018-05-15 02:52:40.727475"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlanet Create (0.8ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jupiter"], ["orbit", 700.0], ["diameter", 0.1], ["mass", 100.0], ["temperature", 0.1], ["moons", 8], ["created_at", "2018-05-15 02:52:40.732805"], ["updated_at", "2018-05-15 02:52:40.732805"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPlanet Destroy (1.0ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPlanet Destroy (0.5ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = ?[0m  [["id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPlanet Destroy (0.8ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = ?[0m  [["id", 4]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPlanet Destroy (0.4ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:11
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPlanet Destroy (1.0ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:11
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPlanet Destroy (0.5ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = ?[0m  [["id", 7]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPlanet Destroy (0.6ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPlanet Destroy (1.6ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = ?[0m  [["id", 9]]
+  ↳ db/seeds.rb:11
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlanet Create (1.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earth"], ["orbit", 1.0], ["diameter", 1.0], ["mass", 1.0], ["temperature", 1.0], ["moons", 1], ["created_at", "2018-05-15 02:53:48.778278"], ["updated_at", "2018-05-15 02:53:48.778278"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPlanet Create (0.7ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mars"], ["orbit", 687.0], ["diameter", 0.5], ["mass", 2.0], ["temperature", 0.2], ["moons", 2], ["created_at", "2018-05-15 02:53:48.800273"], ["updated_at", "2018-05-15 02:53:48.800273"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlanet Create (1.1ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Venus"], ["orbit", 0.7], ["diameter", 0.2], ["mass", 2.0], ["temperature", 6.0], ["moons", 2], ["created_at", "2018-05-15 02:53:48.807885"], ["updated_at", "2018-05-15 02:53:48.807885"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPlanet Create (0.7ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jupiter"], ["orbit", 700.0], ["diameter", 0.1], ["mass", 100.0], ["temperature", 0.1], ["moons", 8], ["created_at", "2018-05-15 02:53:48.815324"], ["updated_at", "2018-05-15 02:53:48.815324"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "planets"."name" FROM "planets"[0m
+  ↳ db/seeds.rb:19
+  [1m[36mPlanet Load (0.8ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePlanets (20180515023955)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "planets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "image" text, "orbit" float, "diameter" float, "mass" float, "temperature" float, "moons" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180515023955_create_planets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180515023955"]]
+  ↳ bin/rails:9
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-15 02:58:04.680465"], ["updated_at", "2018-05-15 02:58:04.680465"]]
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlanet Create (1.0ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earth"], ["orbit", 1.0], ["diameter", 1.0], ["mass", 1.0], ["temperature", 1.0], ["moons", 1], ["created_at", "2018-05-15 02:58:11.638453"], ["updated_at", "2018-05-15 02:58:11.638453"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPlanet Create (0.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mars"], ["orbit", 687.0], ["diameter", 0.5], ["mass", 2.0], ["temperature", 0.2], ["moons", 2], ["created_at", "2018-05-15 02:58:11.646527"], ["updated_at", "2018-05-15 02:58:11.646527"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Venus"], ["orbit", 0.7], ["diameter", 0.2], ["mass", 2.0], ["temperature", 6.0], ["moons", 2], ["created_at", "2018-05-15 02:58:11.653330"], ["updated_at", "2018-05-15 02:58:11.653330"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPlanet Create (0.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "orbit", "diameter", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jupiter"], ["orbit", 700.0], ["diameter", 0.1], ["mass", 100.0], ["temperature", 0.1], ["moons", 8], ["created_at", "2018-05-15 02:58:11.659049"], ["updated_at", "2018-05-15 02:58:11.659049"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "planets"."name" FROM "planets"[0m
+  ↳ db/seeds.rb:19
+  [1m[36mPlanet Load (0.9ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+Started GET "/planet" for 127.0.0.1 at 2018-05-15 14:07:34 +1000
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anh/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/planet"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:07:38 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planets"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mPlanet Load (3.9ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:19:01 +1000
+Processing by PlanetsController#index as HTML
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:19:11 +1000
+  Rendering planets/index.html.erb within layouts/application
+  Rendered planets/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 1052ms (Views: 1043.7ms | ActiveRecord: 0.0ms)
+
+
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  Rendered planets/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 140ms (Views: 134.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:19:13 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  Rendered planets/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 106ms (Views: 96.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:22:33 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  Rendered planets/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/anh/wdi/classwork/week5/planets-db/app/views/planets/index.html.erb:12: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/planets/index.html.erb:12: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:22:34 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  Rendered planets/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/anh/wdi/classwork/week5/planets-db/app/views/planets/index.html.erb:12: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/planets/index.html.erb:12: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:23:06 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (2.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:5
+  Rendered planets/index.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 80ms (Views: 72.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/planets/1" for 127.0.0.1 at 2018-05-15 14:23:08 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planets/1"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:23:13 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:5
+  Rendered planets/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 21.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:24:23 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:25:00 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.5ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 25.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:26:46 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..3)):
+     6: <% @planets.each do |p| %>
+     7: <li>
+     8:   <a href="/planets/<%= p.id %>"><%= p.name %></a>
+     9:   (<%= pluralize p.moons %> moon )
+    10: </li>
+    11: <% end %>
+    12: </ul>
+  
+app/views/planets/index.html.erb:9:in `block in _app_views_planets_index_html_erb___4470816375924545422_70235414985140'
+app/views/planets/index.html.erb:6:in `_app_views_planets_index_html_erb___4470816375924545422_70235414985140'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:27:35 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/1" for 127.0.0.1 at 2018-05-15 14:27:48 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planets/1"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets/1" for 127.0.0.1 at 2018-05-15 14:31:19 +1000
+  
+SyntaxError (/Users/anh/wdi/classwork/week5/planets-db/app/controllers/planets_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/planets_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/planets/1" for 127.0.0.1 at 2018-05-15 14:31:32 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlanet Load (4.7ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:12
+Completed 406 Not Acceptable in 201ms (ActiveRecord: 5.4ms)
+
+
+  
+ActionController::UnknownFormat (PlanetsController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.0) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.0) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets/1" for 127.0.0.1 at 2018-05-15 14:36:25 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlanet Load (0.1ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:12
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    18: <p> Temperature: <%= @planet.temperature %> earth temp</p>
+    19: <p> Moons: <%= @planet.moons %></p>
+    20: <br>
+    21: <%= image_tag @planet.image %>
+    22: 
+    23: (Last updated <%= @planet.updated_at %>)
+  
+app/views/planets/show.html.erb:21:in `_app_views_planets_show_html_erb___3056947338364536088_70235388333360'
+Started GET "/planets/1" for 127.0.0.1 at 2018-05-15 14:38:20 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:12
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 60ms (Views: 52.3ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mPlanet Load (1.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" ORDER BY "planets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" ORDER BY "planets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Update (1.3ms)[0m  [1m[33mUPDATE "planets" SET "image" = ?, "updated_at" = ? WHERE "planets"."id" = ?[0m  [["image", "https://thenypost.files.wordpress.com/2016/12/161214-earth-asteroid-nasa-feature.jpg?quality=90&strip=all"], ["updated_at", "2018-05-15 04:39:49.301786"], ["id", 1]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/planets/1" for 127.0.0.1 at 2018-05-15 14:41:36 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlanet Load (3.1ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:12
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 92ms (Views: 70.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/planets/1" for 127.0.0.1 at 2018-05-15 14:42:45 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlanet Load (0.1ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:12
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 67ms (Views: 61.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/planets/1" for 127.0.0.1 at 2018-05-15 14:48:50 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlanet Load (2.4ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:12
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 100ms (Views: 52.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/planets/1" for 127.0.0.1 at 2018-05-15 14:49:34 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planets/1"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:49:43 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (2.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 94ms (Views: 74.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 14:50:44 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 95ms (Views: 86.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/planet/2" for 127.0.0.1 at 2018-05-15 14:50:46 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:12
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/2" for 127.0.0.1 at 2018-05-15 15:00:13 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlanet Load (2.1ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:13
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 428ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `planets_new_path' for #<#<Class:0x007fc1e6dd61c0>:0x007fc1e6dd4848>
+Did you mean?  planets_path):
+    14:     <hr>
+    15:     <%= yield %>
+    16:     <hr>
+    17:     <a href="<%= planets_new_path %>">Add Planet</a>
+    18:     <footer>
+    19:       &copy; Round Boys Productions 2018
+    20:     </footer>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__1586795501654680800_70235389323420'
+Started GET "/planet/2" for 127.0.0.1 at 2018-05-15 15:00:14 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:13
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 328ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `planets_new_path' for #<#<Class:0x007fc1e6dd61c0>:0x007fc1e6c58b68>
+Did you mean?  planets_path):
+    14:     <hr>
+    15:     <%= yield %>
+    16:     <hr>
+    17:     <a href="<%= planets_new_path %>">Add Planet</a>
+    18:     <footer>
+    19:       &copy; Round Boys Productions 2018
+    20:     </footer>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__1586795501654680800_70235424655920'
+Started GET "/planet/2" for 127.0.0.1 at 2018-05-15 15:00:30 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlanet Load (0.1ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:13
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 399ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `planet_new_path' for #<#<Class:0x007fc1e6dd61c0>:0x007fc1eb1dab00>
+Did you mean?  planet_path
+               planets_path):
+    14:     <hr>
+    15:     <%= yield %>
+    16:     <hr>
+    17:     <a href="<%= planet_new_path %>">Add Planet</a>
+    18:     <footer>
+    19:       &copy; Round Boys Productions 2018
+    20:     </footer>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__1586795501654680800_70235425020380'
+Started GET "/planet/2" for 127.0.0.1 at 2018-05-15 15:00:31 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:13
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 461ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `planet_new_path' for #<#<Class:0x007fc1e6dd61c0>:0x007fc1eb11ed88>
+Did you mean?  planet_path
+               planets_path):
+    14:     <hr>
+    15:     <%= yield %>
+    16:     <hr>
+    17:     <a href="<%= planet_new_path %>">Add Planet</a>
+    18:     <footer>
+    19:       &copy; Round Boys Productions 2018
+    20:     </footer>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__1586795501654680800_70235413306180'
+Started GET "/planet/2" for 127.0.0.1 at 2018-05-15 15:02:08 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlanet Load (2.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:13
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 402ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `planet_new_path' for #<#<Class:0x007fc1e61bbf70>:0x007fc1e61ba418>
+Did you mean?  planets_new_path
+               planet_path
+               planets_path):
+    14:     <hr>
+    15:     <%= yield %>
+    16:     <hr>
+    17:     <a href="<%= planet_new_path %>">Add Planet</a>
+    18:     <footer>
+    19:       &copy; Round Boys Productions 2018
+    20:     </footer>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__1586795501654680800_70235414449480'
+Started GET "/planet/2" for 127.0.0.1 at 2018-05-15 15:02:09 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:13
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 535ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `planet_new_path' for #<#<Class:0x007fc1e61bbf70>:0x007fc1e9961d80>
+Did you mean?  planets_new_path
+               planet_path
+               planets_path):
+    14:     <hr>
+    15:     <%= yield %>
+    16:     <hr>
+    17:     <a href="<%= planet_new_path %>">Add Planet</a>
+    18:     <footer>
+    19:       &copy; Round Boys Productions 2018
+    20:     </footer>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__1586795501654680800_70235412277980'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:02:31 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 289ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `planet_new_path' for #<#<Class:0x007fc1e61bbf70>:0x007fc1e499c7a0>
+Did you mean?  planets_new_path
+               planet_path
+               planets_path):
+    14:     <hr>
+    15:     <%= yield %>
+    16:     <hr>
+    17:     <a href="<%= planet_new_path %>">Add Planet</a>
+    18:     <footer>
+    19:       &copy; Round Boys Productions 2018
+    20:     </footer>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__1586795501654680800_70235370565760'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:02:55 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/4" for 127.0.0.1 at 2018-05-15 15:02:57 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:13
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 67ms (Views: 60.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 15:02:58 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 15:04:10 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 53ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 15:08:20 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 55ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:08:24 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 63ms (Views: 55.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:08:55 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/2" for 127.0.0.1 at 2018-05-15 15:08:58 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:28
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 38ms (Views: 33.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 15:08:59 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 36ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/planets" for 127.0.0.1 at 2018-05-15 15:09:01 +1000
+Processing by PlanetsController#create as HTML
+  Parameters: {"name"=>"", "image"=>"", "orbit"=>"", "diameter"=>"", "mass"=>"", "temperature"=>"", "moons"=>""}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.0) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.0) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.0) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:09:05 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:09:09 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/planets" for 127.0.0.1 at 2018-05-15 15:10:25 +1000
+Processing by PlanetsController#create as HTML
+  Parameters: {"name"=>"", "image"=>"", "orbit"=>"", "diameter"=>"", "mass"=>"", "temperature"=>"", "moons"=>""}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.0) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.0) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.0) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.0) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:11:54 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 118ms (Views: 98.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 15:11:56 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/planets" for 127.0.0.1 at 2018-05-15 15:12:01 +1000
+Processing by PlanetsController#create as HTML
+  Parameters: {"name"=>"Neptune", "image"=>"", "orbit"=>"", "diameter"=>"", "mass"=>"", "temperature"=>"", "moons"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/planets_controller.rb:11
+  [1m[36mPlanet Create (3.7ms)[0m  [1m[32mINSERT INTO "planets" ("name", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Neptune"], ["image", ""], ["created_at", "2018-05-15 05:12:01.594926"], ["updated_at", "2018-05-15 05:12:01.594926"]]
+  ↳ app/controllers/planets_controller.rb:11
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/planets_controller.rb:11
+Redirected to http://localhost:3000/planets
+Completed 302 Found in 14ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:12:01 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 15:23:31 +1000
+  
+SyntaxError (/Users/anh/wdi/classwork/week5/planets-db/app/controllers/planets_controller.rb:38: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/planets_controller.rb:38: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:26:26 +1000
+  
+SyntaxError (/Users/anh/wdi/classwork/week5/planets-db/app/controllers/planets_controller.rb:38: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/planets_controller.rb:38: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:26:49 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (2.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (44.7ms)
+Completed 200 OK in 124ms (Views: 110.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 15:26:51 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 50ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 15:34:36 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 53ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 15:36:00 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 15:36:01 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:36:07 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (2.4ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 87ms (Views: 51.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/planet/5" for 127.0.0.1 at 2018-05-15 15:36:13 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 40ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/5/edit" for 127.0.0.1 at 2018-05-15 15:36:14 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/5/edit" for 127.0.0.1 at 2018-05-15 15:37:09 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (1.7ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 86ms (Views: 57.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/planet/5" for 127.0.0.1 at 2018-05-15 15:37:13 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/planet/5"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planet/5" for 127.0.0.1 at 2018-05-15 15:40:15 +1000
+  
+SyntaxError (/Users/anh/wdi/classwork/week5/planets-db/app/controllers/planets_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/planets_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/planet/1" for 127.0.0.1 at 2018-05-15 15:40:20 +1000
+  
+SyntaxError (/Users/anh/wdi/classwork/week5/planets-db/app/controllers/planets_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/planets_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/planet" for 127.0.0.1 at 2018-05-15 15:40:27 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planet"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:41:03 +1000
+  
+SyntaxError (/Users/anh/wdi/classwork/week5/planets-db/app/controllers/planets_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/planets_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:42:23 +1000
+  
+SyntaxError (/Users/anh/wdi/classwork/week5/planets-db/app/controllers/planets_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/planets_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:42:41 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (2.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 91ms (Views: 78.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/planet/5" for 127.0.0.1 at 2018-05-15 15:42:43 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 49ms (Views: 44.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/5/edit" for 127.0.0.1 at 2018-05-15 15:42:44 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 51ms (Views: 42.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/planet/5" for 127.0.0.1 at 2018-05-15 15:42:46 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/planet/5"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planet/3" for 127.0.0.1 at 2018-05-15 15:45:34 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPlanet Load (2.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 78ms (Views: 50.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/planets/3/edit" for 127.0.0.1 at 2018-05-15 15:45:38 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 33ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/planet/3" for 127.0.0.1 at 2018-05-15 15:45:39 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/planet/3"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:48:29 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (2.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 83ms (Views: 71.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:48:31 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 30ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:48:38 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/routes" for 127.0.0.1 at 2018-05-15 15:48:48 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/rails/routes"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planet/5" for 127.0.0.1 at 2018-05-15 15:48:55 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/5/edit" for 127.0.0.1 at 2018-05-15 15:48:58 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 35ms (Views: 29.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/planet/5" for 127.0.0.1 at 2018-05-15 15:49:03 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/planet/5"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets/5/edit" for 127.0.0.1 at 2018-05-15 15:50:40 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.1ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/planet/5" for 127.0.0.1 at 2018-05-15 15:50:41 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/planet/5"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/planet/5" for 127.0.0.1 at 2018-05-15 15:52:22 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/planet/5"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planet" for 127.0.0.1 at 2018-05-15 15:52:25 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planet"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planet" for 127.0.0.1 at 2018-05-15 15:52:28 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planet"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planet/5" for 127.0.0.1 at 2018-05-15 15:52:33 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 69ms (Views: 61.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/5/edit" for 127.0.0.1 at 2018-05-15 15:52:34 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `temparature' for #<Planet:0x007fc1e64a6870>
+Did you mean?  temperature
+               temperature=
+               temperature?):
+    10:  Diameter: <input type=“text” name=“diameter” value=“<%= @planet.diameter %>“><br>
+    11:  Mass: <input type=“text” name=“mass” value=“<%= @planet.mass %>“><br>
+    12:  Moons: <input type=“text” name=“moons” value=“<%= @planet.moons %>“><br>
+    13:  Temperature: <input type=“text” name=“temparature” value=“<%= @planet.temparature %>“><br>
+    14:  <br>
+    15: 
+    16:  <button>Save</button>
+  
+app/views/planets/edit.html.erb:13:in `_app_views_planets_edit_html_erb__2882290622761468982_70235384523400'
+Started GET "/planets/" for 127.0.0.1 at 2018-05-15 15:52:54 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 54ms (Views: 50.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/4" for 127.0.0.1 at 2018-05-15 15:52:56 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlanet Load (0.1ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 32.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/planets/4/edit" for 127.0.0.1 at 2018-05-15 15:52:57 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 41ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/4/%E2%80%9C/planet/4%E2%80%9D?%E2%80%9Cname%E2%80%9D=%E2%80%9CJupiter%E2%80%9C&%E2%80%9Cimage%E2%80%9D=%E2%80%9C%E2%80%9C&%E2%80%9Corbit%E2%80%9D=%E2%80%9C700.0%E2%80%9C&%E2%80%9Cdiameter%E2%80%9D=%E2%80%9C0.1%E2%80%9C&%E2%80%9Cmass%E2%80%9D=%E2%80%9C100.0%E2%80%9C&%E2%80%9Cmoons%E2%80%9D=%E2%80%9C8%E2%80%9C&%E2%80%9Ctemperature%E2%80%9D=1" for 127.0.0.1 at 2018-05-15 15:53:00 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planets/4/%E2%80%9C/planet/4%E2%80%9D"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets/4/%E2%80%9C/planet/4%E2%80%9D?%E2%80%9Cname%E2%80%9D=%E2%80%9CJupiter%E2%80%9C&%E2%80%9Cimage%E2%80%9D=%E2%80%9C%E2%80%9C&%E2%80%9Corbit%E2%80%9D=%E2%80%9C700.0%E2%80%9C&%E2%80%9Cdiameter%E2%80%9D=%E2%80%9C0.1%E2%80%9C&%E2%80%9Cmass%E2%80%9D=%E2%80%9C100.0%E2%80%9C&%E2%80%9Cmoons%E2%80%9D=%E2%80%9C8%E2%80%9C&%E2%80%9Ctemperature%E2%80%9D=1" for 127.0.0.1 at 2018-05-15 15:53:35 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planets/4/%E2%80%9C/planet/4%E2%80%9D"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:53:42 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 58ms (Views: 54.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/planet/5" for 127.0.0.1 at 2018-05-15 15:53:45 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.1ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/planets/5/edit" for 127.0.0.1 at 2018-05-15 15:53:46 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 42ms (Views: 36.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/5%E2%80%9D%20method=" for 127.0.0.1 at 2018-05-15 15:53:49 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"5” method="}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 23.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/5" for 127.0.0.1 at 2018-05-15 15:54:07 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:54:13 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 41ms (Views: 35.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planet/5" for 127.0.0.1 at 2018-05-15 15:54:16 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 36ms (Views: 31.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/4" for 127.0.0.1 at 2018-05-15 15:54:19 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 35ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/5" for 127.0.0.1 at 2018-05-15 15:54:23 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 49ms (Views: 42.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/5/edit" for 127.0.0.1 at 2018-05-15 15:54:25 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/5%E2%80%9D%20method=" for 127.0.0.1 at 2018-05-15 15:54:28 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"5” method="}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-05-15 15:56:00 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planes"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:56:09 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 50ms (Views: 46.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planet/1" for 127.0.0.1 at 2018-05-15 15:56:11 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planets/1/edit" for 127.0.0.1 at 2018-05-15 15:56:15 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planet/1%E2%80%9D%20method=" for 127.0.0.1 at 2018-05-15 15:56:19 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"1” method="}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:57:11 +1000
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anh/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (3.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 358ms (Views: 334.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 15:57:15 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/planets" for 127.0.0.1 at 2018-05-15 15:57:26 +1000
+Processing by PlanetsController#create as HTML
+  Parameters: {"name"=>"Test", "image"=>"", "orbit"=>"", "diameter"=>"", "mass"=>"500", "temperature"=>"12", "moons"=>"6"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/planets_controller.rb:11
+  [1m[36mPlanet Create (3.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "image", "mass", "temperature", "moons", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Test"], ["image", ""], ["mass", 500.0], ["temperature", 12.0], ["moons", 6], ["created_at", "2018-05-15 05:57:26.126082"], ["updated_at", "2018-05-15 05:57:26.126082"]]
+  ↳ app/controllers/planets_controller.rb:11
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/planets_controller.rb:11
+Redirected to http://localhost:3000/planets
+Completed 302 Found in 18ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 15:57:26 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 47ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planet/6" for 127.0.0.1 at 2018-05-15 15:57:31 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 58ms (Views: 48.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planet/6" for 127.0.0.1 at 2018-05-15 15:58:39 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 42ms (Views: 38.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/6/edit" for 127.0.0.1 at 2018-05-15 15:58:41 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlanet Load (0.1ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:36
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 45ms (Views: 41.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/planet/6%E2%80%9D%20method=" for 127.0.0.1 at 2018-05-15 15:58:47 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"6” method="}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 43ms (Views: 36.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/6%E2%80%9D%20method=" for 127.0.0.1 at 2018-05-15 16:00:53 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"6” method="}
+  [1m[36mPlanet Load (0.1ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:52
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 73ms (Views: 52.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 16:00:57 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/planet/6" for 127.0.0.1 at 2018-05-15 16:01:00 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:52
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 28.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/6/edit" for 127.0.0.1 at 2018-05-15 16:01:01 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:27
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 35ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/6%E2%80%9D%20method=" for 127.0.0.1 at 2018-05-15 16:01:05 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"6” method="}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:52
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-05-15 16:02:22 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planes"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 16:02:26 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 108ms (Views: 94.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/planet/6" for 127.0.0.1 at 2018-05-15 16:02:29 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 29.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planets/6/edit" for 127.0.0.1 at 2018-05-15 16:02:31 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:27
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/6%E2%80%9D%20method=" for 127.0.0.1 at 2018-05-15 16:02:39 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"6” method="}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 16:03:49 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 64ms (Views: 57.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/planet/6" for 127.0.0.1 at 2018-05-15 16:03:52 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 63ms (Views: 57.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/6/edit" for 127.0.0.1 at 2018-05-15 16:03:53 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:27
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 39ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/6?image=&orbit=1&diameter=200&mass=500.0&moons=6&temperature=12.0" for 127.0.0.1 at 2018-05-15 16:04:01 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"image"=>"", "orbit"=>"1", "diameter"=>"200", "mass"=>"500.0", "moons"=>"6", "temperature"=>"12.0", "id"=>"6"}
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 33ms (Views: 27.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/planets/6/delete" for 127.0.0.1 at 2018-05-15 16:04:07 +1000
+Processing by PlanetsController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:59
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/planets_controller.rb:60
+  [1m[36mPlanet Destroy (0.5ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/planets_controller.rb:60
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/planets_controller.rb:60
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 3.7ms)
+
+
+  
+NameError (undefined local variable or method `redirect_to_planets_path' for #<PlanetsController:0x007fda91db80a8>):
+  
+app/controllers/planets_controller.rb:62:in `destroy'
+Started GET "/planet/6?image=&orbit=1&diameter=200&mass=500.0&moons=6&temperature=12.0" for 127.0.0.1 at 2018-05-15 16:04:13 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"image"=>"", "orbit"=>"1", "diameter"=>"200", "mass"=>"500.0", "moons"=>"6", "temperature"=>"12.0", "id"=>"6"}
+  [1m[36mPlanet Load (0.1ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Planet with 'id'=6):
+  
+app/controllers/planets_controller.rb:54:in `show'
+Started GET "/planet/6?image=&orbit=1&diameter=200&mass=500.0&moons=6&temperature=12.0" for 127.0.0.1 at 2018-05-15 16:04:37 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"image"=>"", "orbit"=>"1", "diameter"=>"200", "mass"=>"500.0", "moons"=>"6", "temperature"=>"12.0", "id"=>"6"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+Completed 404 Not Found in 13ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Planet with 'id'=6):
+  
+app/controllers/planets_controller.rb:54:in `show'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 16:04:53 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 75ms (Views: 71.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 16:04:56 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/planets" for 127.0.0.1 at 2018-05-15 16:05:03 +1000
+Processing by PlanetsController#create as HTML
+  Parameters: {"name"=>"egg", "image"=>"", "orbit"=>"1", "diameter"=>"", "mass"=>"", "temperature"=>"", "moons"=>""}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/planets_controller.rb:11
+  [1m[36mPlanet Create (0.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "image", "orbit", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "egg"], ["image", ""], ["orbit", 1.0], ["created_at", "2018-05-15 06:05:03.408532"], ["updated_at", "2018-05-15 06:05:03.408532"]]
+  ↳ app/controllers/planets_controller.rb:11
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/planets_controller.rb:11
+Redirected to http://localhost:3000/planets
+Completed 302 Found in 11ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 16:05:03 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 31ms (Views: 27.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planet/7" for 127.0.0.1 at 2018-05-15 16:05:05 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 71ms (Views: 66.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/7/edit" for 127.0.0.1 at 2018-05-15 16:05:07 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:27
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 59ms (Views: 52.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/7?image=&orbit=1.0&diameter=&mass=12&moons=&temperature=" for 127.0.0.1 at 2018-05-15 16:05:10 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"image"=>"", "orbit"=>"1.0", "diameter"=>"", "mass"=>"12", "moons"=>"", "temperature"=>"", "id"=>"7"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/7/delete" for 127.0.0.1 at 2018-05-15 16:05:13 +1000
+Processing by PlanetsController#destroy as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:59
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/planets_controller.rb:60
+  [1m[36mPlanet Destroy (0.7ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/planets_controller.rb:60
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/planets_controller.rb:60
+Redirected to http://localhost:3000/planets
+Completed 302 Found in 10ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 16:05:13 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 63ms (Views: 57.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 16:06:11 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 64ms (Views: 60.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planet/5" for 127.0.0.1 at 2018-05-15 16:06:13 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 47ms (Views: 41.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/5/edit" for 127.0.0.1 at 2018-05-15 16:06:15 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:27
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/planet/5" for 127.0.0.1 at 2018-05-15 16:06:17 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/planet/5"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 16:07:30 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 56ms (Views: 51.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planet/4" for 127.0.0.1 at 2018-05-15 16:07:32 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 29.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/planets/4/edit" for 127.0.0.1 at 2018-05-15 16:07:33 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:27
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/planet/4" for 127.0.0.1 at 2018-05-15 16:07:37 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/planet/4"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" ORDER BY "planets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" ORDER BY "planets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlanet Update (0.7ms)[0m  [1m[33mUPDATE "planets" SET "orbit" = ?, "updated_at" = ? WHERE "planets"."id" = ?[0m  [["orbit", 2.0], ["updated_at", "2018-05-15 06:11:31.904531"], ["id", 1]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" ORDER BY "planets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 16:12:03 +1000
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anh/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 355ms (Views: 330.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/planets/new" for 127.0.0.1 at 2018-05-15 16:12:07 +1000
+Processing by PlanetsController#new as HTML
+  Rendering planets/new.html.erb within layouts/application
+  Rendered planets/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/planets" for 127.0.0.1 at 2018-05-15 16:12:13 +1000
+Processing by PlanetsController#create as HTML
+  Parameters: {"name"=>"test", "image"=>"", "orbit"=>"5", "diameter"=>"", "mass"=>"", "temperature"=>"", "moons"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/planets_controller.rb:11
+  [1m[36mPlanet Create (0.8ms)[0m  [1m[32mINSERT INTO "planets" ("name", "image", "orbit", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "test"], ["image", ""], ["orbit", 5.0], ["created_at", "2018-05-15 06:12:13.901225"], ["updated_at", "2018-05-15 06:12:13.901225"]]
+  ↳ app/controllers/planets_controller.rb:11
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/planets_controller.rb:11
+Redirected to http://localhost:3000/planets
+Completed 302 Found in 8ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 16:12:13 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.7ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 133ms (Views: 125.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/planet/8" for 127.0.0.1 at 2018-05-15 16:12:16 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 49ms (Views: 39.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planet/8" for 127.0.0.1 at 2018-05-15 16:13:30 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/planet/8"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/planets" for 127.0.0.1 at 2018-05-15 16:13:40 +1000
+Processing by PlanetsController#index as HTML
+  Rendering planets/index.html.erb within layouts/application
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/views/planets/index.html.erb:6
+  Rendered planets/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 83ms (Views: 71.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/planets/8" for 127.0.0.1 at 2018-05-15 16:13:43 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 49ms (Views: 42.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/planets/8/edit" for 127.0.0.1 at 2018-05-15 16:13:45 +1000
+Processing by PlanetsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:27
+  Rendering planets/edit.html.erb within layouts/application
+  Rendered planets/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 51ms (Views: 45.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/planets/8" for 127.0.0.1 at 2018-05-15 16:13:47 +1000
+Processing by PlanetsController#update as HTML
+  Parameters: {"name"=>"test", "image"=>"", "orbit"=>"5.0", "diameter"=>"", "mass"=>"", "moons"=>"122", "temperature"=>"", "id"=>"8"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/planets_controller.rb:34
+  [1m[36mPlanet Update (0.7ms)[0m  [1m[33mUPDATE "planets" SET "moons" = ?, "updated_at" = ? WHERE "planets"."id" = ?[0m  [["moons", 122], ["updated_at", "2018-05-15 06:13:47.664642"], ["id", 8]]
+  ↳ app/controllers/planets_controller.rb:34
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/planets_controller.rb:34
+Redirected to http://localhost:3000/planets/8
+Completed 302 Found in 10ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/planets/8" for 127.0.0.1 at 2018-05-15 16:13:47 +1000
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:54
+  Rendering planets/show.html.erb within layouts/application
+  Rendered planets/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 36ms (Views: 30.6ms | ActiveRecord: 0.4ms)
+
+
