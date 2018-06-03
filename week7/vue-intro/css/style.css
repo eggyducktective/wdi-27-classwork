@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(90deg, #b9deed, #efefef);
+}
+
+h1 {
+  background: black;
+  color: white;
+}

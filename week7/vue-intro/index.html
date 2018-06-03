@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Intro</title>
+  <script src="js/vue.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<h1>Vue.js Intro</h1>
+<div id="app">
+  {{ message }}
+
+  <ol>
+    <!-- <li v-for="todo in todos">
+      {{todo.text}}
+    </li> -->
+    <todo-item v-for="item in todos" v-bind:todo="item" v-bind:key="item.id">
+    </todo-item>
+
+  </ol>
+  <input type="text" v-model="newItemText">
+  <button v-on:click="addItem">Add to List</button>
+  <hr>
+
+  <input type="text" v-model="message">
+
+  <button @click="reverseMessage">Reverse!</button>
+  <br><br>
+  <span v-if="seen">NOW YOU SEE ME</span>
+  <br><br>
+  <div v-bind:title="message">Hover to see a message!</div>
+
+  <img v-bind:src="cat">
+
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
