@@ -1,0 +1,82 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Sass variable
+
+$padding: 10px;
+$brandColor: darkgrey;
+
+// change value with $c
+@mixin hotPinkItalic($c:hotpink) {
+  color: $c;
+  font-style: italic;
+}
+
+//
+.post {
+  max-width: 960px;
+  margin: 0 auto;
+  margin-bottom: 3em;
+  padding: $padding;
+  border-bottom: 1px solid black;
+  border-radius: 0.5em;
+  background-color: white;
+  box-shadow: 0 0 10px black;
+
+  h2 {
+    @include hotPinkItalic(brown);
+    padding: $padding;
+  }
+
+  .content {
+    border: 5px dashed $brandColor;
+    padding: $padding;
+    border-radius: 0.5em;
+
+    p {
+      text-align: right;
+      color: $brandColor;
+    }
+
+  }
+
+}
+
+.post h2 {
+
+}
+
+
+#other p {
+  @include hotPinkItalic
+}
+
+// other classes will be inherited from this.
+%notification {
+  border: 5px solid black;
+  border-radius: 0.5em;
+  text-align: center;
+  background-color: $brandColor;
+  padding: $padding;
+  font-size: 150%;
+  max-width: 500px / 960px * 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// copy & paste
+.plain {
+  @extend %notification;
+  color: yellow;
+}
+
+.error {
+  @extend %notification;
+  color: red;
+}
+
+.success {
+  @extend %notification;
+  color: green;
+}
