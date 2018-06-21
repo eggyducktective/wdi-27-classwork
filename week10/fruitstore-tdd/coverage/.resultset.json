@@ -1,0 +1,42 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/anh/wdi/classwork/week10/fruitstore-tdd/app/models/fruit.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/anh/wdi/classwork/week10/fruitstore-tdd/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/anh/wdi/classwork/week10/fruitstore-tdd/app/models/shelf.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/anh/wdi/classwork/week10/fruitstore-tdd/app/models/pear.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1529547338
+  }
+}
