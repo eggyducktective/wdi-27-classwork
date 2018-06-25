@@ -20,13 +20,15 @@ MongoClient.connect('mongodb://127.0.0.1:27017/ba', (err, client) => {
 });
 
 
-app.listen(3000, function(){
+const server = app.listen(3000, () => {
   console.log('Server is listening on port 3000. Ready to accept EGGS');
 });
+module.exports = server;
 
 app.get('/', (req, res) => {
   console.log('Eggs have been received');
-  res.send('<h1>Hello World, want to get some EGGS?</h1>');
+  // res.send('<h1>Hello World, want to get some EGGS?</h1>');
+  res.send('Hello World, want to get some EGGS?');
 });
 
 app.use(express.static('public'));
@@ -42,6 +44,7 @@ app.get('/flights', (req, res) => {
   db.collection('flights').find().toArray((err, results)=>{
     console.log(results);
     res.json(results)
+    // res.json({}); fake line to test
   });
 }); // get /flights
 
