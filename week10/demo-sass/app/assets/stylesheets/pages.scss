@@ -80,3 +80,215 @@ $brandColor: darkgrey;
   @extend %notification;
   color: green;
 }
+
+
+
+/* replace float, uses when you want to go one way across or one way down ------------------------------------------------------------------------------------------------------------ FLEX */
+.flex-container {
+  display: flex;
+
+  // The flex-direction property defines in which direction the container wants tostack the flex items
+  flex-direction: column;
+
+  // The wrap value specifies that the flex items will wrap if neccessary
+  flex-wrap: wrap;
+
+  //
+  justify-content: space-around;
+
+  align-items: center;
+
+  div {
+    border: 1px solid black;
+    padding: 10px;
+    width: 50%;
+  }
+
+  // change the ordeing of the flex boxes
+  #item3 {
+    order: -1; // the beginning
+  }
+
+  #item2 {
+    order: 1;
+  }
+}
+
+@media (min-width: 600px) {
+  .flex-container {
+    flex-direction: row;
+    background-color: yellow;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  flex: 25%;
+  max-width: 45%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+
+
+}
+
+
+@media (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* GRID is newer, uses for both row n col ------------------------------------------------------------------------------------------------------------ GRID */
+
+// .grid-container {
+//   display: grid;
+//
+//   grid-template-columns: auto auto auto auto;
+//   // grid template colums: 80px, 200px, 80px, 200px
+//
+//   // grid-template-rows: 80px 200px;
+//
+//   grid-gap: 10px;
+//
+//   background-color: hotpink;
+//
+//   padding: 20px;
+//
+//   div {
+//     background-color: black;
+//     border: 1px solid white;
+//     color: white;
+//     text-align: center;
+//     font-size: 30px;
+//
+//   }
+// }
+
+.item1 {
+  grid-row: 1 / 5;
+
+  //start on row-line 1 and column line 2, and end on row-line 5 and colum line 6
+  grid-area: 1 / 2 / 5 / 6;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: 'header header header header header header' 'menu main main article article' 'menu footer footer footer footer';
+  background-color: green;
+}
+
+.header {
+  grid-area: header;
+  height: 15vh;
+}
+
+.menu {
+  grid-area: menu;
+  height: 40vh;
+}
+
+.main {
+  grid-area: main;
+  height: 20vh;
+}
+
+.article {
+  grid-area: article;
+  height: 15vh;
+}
+
+.footer {
+  grid-area: header;
+  height: 15vh;
+}
+
+
+
+/*  ------------------------------------------------------------------------------------------------------------ RESPONSIVE */
+
+.responsive-grid-container {
+  display: grid;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media(min-width: 768px) {
+  .responsive-grid-container {
+    display:grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+.r_header {
+  grid-column: span 3;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.4em;
+  background-color: #369;
+  color: white;
+}
+
+.r_main {
+  flex: 1;
+  padding: 20px;
+}
+
+.r_nav {
+  background-color: #f90;
+  padding: 20px;
+}
+
+aside {
+  padding: 20px;
+  background-color: violet;
+}
+
+
+.r_footer {
+  grid-column: span 3;
+  padding: 30px;
+  font-size: 1.4em;
+  background-color: #690;
+  color: white;
+}
+
+.r_h1 {
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  font-weight: bold;
+}
